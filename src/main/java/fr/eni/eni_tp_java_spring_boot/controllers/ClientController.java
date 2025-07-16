@@ -38,7 +38,8 @@ public class ClientController implements BaseController<Client> {
     }
 
     @Override
-    public void delete(String id) {
-
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable String id) {
+        this.clientService.delete(id);
     }
 }

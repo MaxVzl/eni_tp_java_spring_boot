@@ -31,4 +31,10 @@ public class ClientService {
         }
         return null;
     }
+
+    public void delete(String id) {
+        if (this.clientRepository.existsById(id)) {
+            this.clientRepository.deleteById(id);
+        }
+    }
 }
