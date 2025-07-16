@@ -1,32 +1,33 @@
 package fr.eni.eni_tp_java_spring_boot.models;
 
-import jakarta.persistence.*;
+//import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 
 import java.util.List;
 
 @Data
-@Entity
+//@Entity
 public class Game {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    //@GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
-    @Column(nullable = false)
+    //@Column(nullable = false)
     private Float dailyRentalRate;
 
-    @Column(nullable = false)
+    //@Column(nullable = false)
     private String title;
 
-    @Column(nullable = false)
+    //@Column(nullable = false)
     private Integer minAge;
 
-    @Column(nullable = false)
+    //@Column(nullable = false)
     private String description;
 
-    @Column(nullable = false)
+    //@Column(nullable = false)
     private Float avgDuration;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    //@ManyToMany(fetch = FetchType.EAGER)
     private List<Genre> genres;
 }

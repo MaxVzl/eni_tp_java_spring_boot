@@ -15,4 +15,8 @@ public class ClientService {
     public Iterable<Client> findAll() {
         return this.clientRepository.findAll();
     }
+
+    public Client findById(String id) {
+        return this.clientRepository.findById(id).orElse(null);
+    }
 }

@@ -2,9 +2,7 @@ package fr.eni.eni_tp_java_spring_boot.controllers;
 
 import fr.eni.eni_tp_java_spring_boot.models.Client;
 import fr.eni.eni_tp_java_spring_boot.services.ClientService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/clients")
@@ -22,8 +20,10 @@ public class ClientController implements BaseController<Client> {
     }
 
     @Override
-    public Client show(String id) {
-        return null;
+    @GetMapping("/{id}")
+    public Client show(@PathVariable String id) {
+        System.out.println("ok ok ok " + id);
+        return this.clientService.findById(id);
     }
 
     @Override
