@@ -22,18 +22,18 @@ public class ClientController implements BaseController<Client> {
     @Override
     @GetMapping("/{id}")
     public Client show(@PathVariable String id) {
-        System.out.println("ok ok ok " + id);
         return this.clientService.findById(id);
     }
 
     @Override
-    public Client create(Client entity) {
-        return null;
+    @PostMapping("")
+    public Client create(@RequestBody Client entity) {
+        return this.clientService.create(entity);
     }
 
     @Override
     public Client update(String id, Client entity) {
-        return null;
+        return this.clientService.update(id, entity);
     }
 
     @Override

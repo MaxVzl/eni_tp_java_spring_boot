@@ -19,4 +19,8 @@ public class ClientService {
     public Client findById(String id) {
         return this.clientRepository.findById(id).orElse(null);
     }
+
+    public Client create(Client client) {
+        return this.clientRepository.save(client);
+    }
 }
