@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ClientRepository extends CrudRepository<Client, String> {
 
+    Iterable<Client> findByLastNameContainingIgnoreCase(String lastName);
 }

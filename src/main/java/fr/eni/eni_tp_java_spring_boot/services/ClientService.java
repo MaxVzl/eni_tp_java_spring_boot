@@ -37,4 +37,11 @@ public class ClientService {
             this.clientRepository.deleteById(id);
         }
     }
+
+    public Iterable<Client> search(String lastName) {
+        if (lastName == null || lastName.isEmpty()) {
+            return this.clientRepository.findAll();
+        }
+        return this.clientRepository.findByLastNameContainingIgnoreCase(lastName);
+    }
 }

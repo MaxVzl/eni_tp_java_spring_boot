@@ -13,10 +13,14 @@ public class ClientController implements BaseController<Client> {
         this.clientService = clientService;
     }
 
-    @Override
+    //@Override
     @GetMapping("")
-    public Iterable<Client> index() {
-        return this.clientService.findAll();
+    public Iterable<Client> index(@RequestParam(required = false) String lastName) {
+        if (lastName != null && !lastName.isEmpty()) {
+            return this.clientService.search(lastName);
+        } else {
+            return this.clientService.findAll();
+        }
     }
 
     @Override
