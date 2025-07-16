@@ -32,7 +32,8 @@ public class ClientController implements BaseController<Client> {
     }
 
     @Override
-    public Client update(String id, Client entity) {
+    @PutMapping("/{id}")
+    public Client update(@PathVariable String id, @RequestBody Client entity) {
         return this.clientService.update(id, entity);
     }
 
