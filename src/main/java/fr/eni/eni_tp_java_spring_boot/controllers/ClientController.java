@@ -25,7 +25,7 @@ public class ClientController implements BaseController<Client> {
         return this.clientService.findById(id);
     }
 
-    @Overridee
+    @Override
     @PostMapping("")
     public Client create(@RequestBody Client entity) {
         return this.clientService.create(entity);
