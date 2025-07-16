@@ -1,19 +1,19 @@
 package fr.eni.eni_tp_java_spring_boot.repositories;
 
-import fr.eni.eni_tp_java_spring_boot.services.ClientService;
+import fr.eni.eni_tp_java_spring_boot.services.CustomerService;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-public class ClientRepositoryTest {
-    private ClientService clientService;
+public class CustomerRepositoryTest {
+    private CustomerService clientService;
 
     @Mock
-    private ClientRepository clientRepository;
+    private CustomerRepository clientRepository;
 
     @BeforeEach
     void init() {
         MockitoAnnotations.openMocks(this);
-        clientService = new ClientService(clientRepository);
+        clientService = new CustomerService(clientRepository);
     }
 }

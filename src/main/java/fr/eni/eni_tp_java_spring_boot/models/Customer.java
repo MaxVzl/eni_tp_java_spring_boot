@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id;
 
 @Data
 //@Entity
-public class Client {
+public class Customer {
     @Id
     //@GeneratedValue(strategy = GenerationType.UUID)
     private String id;
